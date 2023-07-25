@@ -27,7 +27,7 @@ interface IOptions {
 const Breeds: NextPage = () => {
 	const [options, setOptions] = useState<IOptions>({
 		breed: "",
-		limit: 5,
+		limit: 10,
 		order: "ASC",
 		page: 0,
 	});
@@ -100,6 +100,7 @@ const Breeds: NextPage = () => {
 	});
 
 	const data = options.breed ? images.data : breeds.data;
+
 	const paginationLimit = Math.floor(
 		(options.breed
 			? imagesHeaders.data?.["pagination-count"]
@@ -118,7 +119,7 @@ const Breeds: NextPage = () => {
 		imagesHeaders.isFetching;
 
 	return (
-		<Container>
+		<Container page={options.page} options={options} setOptions={setOptions} paginationLimit={paginationLimit}>
 			<ContainerHeader className="flex-wrap" title="breeds">
 				<Select
 					value={options.breed}
@@ -139,7 +140,7 @@ const Breeds: NextPage = () => {
 						</option>
 					))}
 				</Select>
-				<Select
+				{/* <Select
 					value={options.limit}
 					onChange={(e) =>
 						setOptions({
@@ -155,7 +156,7 @@ const Breeds: NextPage = () => {
 					<option value="10">Limit 10</option>
 					<option value="15">Limit 15</option>
 					<option value="20">Limit 20</option>
-				</Select>
+				</Select> */}
 				<Button
 					className="h-[40px]"
 					variant="gray"
@@ -239,7 +240,7 @@ const Breeds: NextPage = () => {
 				<UserLogItem className="mt-[20px]" text="No item found" />
 			)}
 
-			{!isLoading && (
+			{/* {!isLoading && (
 				<div className="mt-[20px] flex items-center justify-end space-x-4">
 					<Button
 						variant="primarySoft"
@@ -260,7 +261,7 @@ const Breeds: NextPage = () => {
 						next <Arrow className="rotate-180" />
 					</Button>
 				</div>
-			)}
+			)} */}
 		</Container>
 	);
 };

@@ -5,6 +5,10 @@ import { Scrollbars } from "react-custom-scrollbars-2";
 
 interface ContainerProps extends ComponentPropsWithoutRef<"main"> {
 	children: ReactNode;
+	page: number;
+	options: any;
+	setOptions: React.Dispatch<React.SetStateAction<any>>;
+	paginationLimit: number;
 }
 
 const renderThumb = ({ style, ...props }: ComponentPropsWithoutRef<"div">) => {
@@ -35,7 +39,14 @@ const renderTrackHorizontal = ({
 	);
 };
 
-const Container: FC<ContainerProps> = ({ children, ...props }) => {
+const handleScroll = (e: any, page: number, options: any, setOptions: React.Dispatch<React.SetStateAction<any>>, paginationLimit: number) => {
+	const bottom = e.target.scrollHeight - e.target.scrollTop === e.target.clientHeight;
+	if (bottom && page < paginationLimit) {
+		setOptions({ ...options, limit: options.limit + 10 });
+	}
+}
+
+const Container: FC<ContainerProps> = ({ children, page, options, setOptions, paginationLimit, ...props }) => {
 	const containerClasses = classNames({
 		[classes.container]: true,
 		[props.className as string]: true,
@@ -48,6 +59,7 @@ const Container: FC<ContainerProps> = ({ children, ...props }) => {
 				renderThumbVertical={renderThumb}
 				renderTrackHorizontal={renderTrackHorizontal}
 				universal
+				onScroll={(e: any) => handleScroll(e, page, options, setOptions, paginationLimit)}
 			>
 				{children}
 			</Scrollbars>
