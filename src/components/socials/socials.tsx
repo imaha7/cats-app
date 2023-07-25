@@ -14,7 +14,7 @@ const Socials: FC<ComponentPropsWithoutRef<"div">> = ({ ...props }) => {
 		<div className={socialsClasses} {...props}>
 			<Button
 				component="a"
-				href="https://github.com/maxkrv/pets-paw-nextjs/"
+				href="https://github.com/imaha7/cats-app"
 				target="_blank"
 				aria-label="GitHub"
 			>
@@ -22,7 +22,7 @@ const Socials: FC<ComponentPropsWithoutRef<"div">> = ({ ...props }) => {
 			</Button>
 			<Button
 				component="a"
-				href="https://www.linkedin.com/in/maxkrv/"
+				href="https://www.linkedin.com/in/imaha7/"
 				target="_blank"
 				aria-label="LinkedIn"
 			>
