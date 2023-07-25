@@ -4,7 +4,7 @@ CRUD application for cat lovers. Made using NextJS and [The Cat API](https://www
 
 ## Online
 
-https://cats-app.vercel.app
+https://kitties-app.vercel.app
 
 ## Project setup
 
