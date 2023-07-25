@@ -4,7 +4,7 @@ CRUD application for cat lovers. Made using NextJS and [The Cat API](https://www
 
 ## Online
 
-https://cats=app.vercel.app
+https://cats-app.vercel.app
 
 ## Project setup
 
@@ -14,7 +14,7 @@ https://cats=app.vercel.app
 npm install
 ```
 
-2. Make .env file, using template from [.env.example](https://github.com/imaha7/cats-app-nextjs/blob/main/.env.example).
+2. Make .env file, using template from [.env.example](https://github.com/imaha7/cats-app/blob/main/.env.example).
 3. Start dev server.
 
 ```bash
