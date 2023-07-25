@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+	@apply bg-gray text-black dark:bg-black dark:text-white;
+	height: calc(100vh - calc(100vh - 100%));
+	font-family: "Jost", sans-serif;
+	-webkit-tap-highlight-color: transparent;
+}
+
+img {
+	object-fit: cover;
+}
+
+#__next {
+	@apply p-[30px] h-full max-w-[1920px] m-auto relative sm:p-[20px];
+}
+
+.carousel-slider {
+	overflow: visible !important;
+}
+
+.control-dots {
+	@apply absolute bottom-[-15px] right-2/4 translate-x-2/4 m-0 flex gap-[5px] p-[10px] rounded-[20px] bg-white w-fit dark:bg-black-soft #{!important};
+}
+
+.dot {
+	@apply m-0 h-[10px] w-[10px] shadow-none bg-primary-soft opacity-100 dark:bg-primary-dark #{!important};
+}
+
+.dot.selected {
+	@apply bg-primary #{!important};
+}
