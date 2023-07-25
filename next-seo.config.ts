@@ -1,5 +1,5 @@
 export default {
-	title: "CatsApp",
+	title: "KittiesApp",
 	description: "Explore cats and have fun",
 	openGraph: {
 		type: "website",
@@ -8,12 +8,12 @@ export default {
 			process.env.NODE_ENV === "production"
 				? process.env.NEXT_PUBLIC_SITE_URL
 				: "http://localhost:3000",
-		site_name: "CatsApp",
+		site_name: "KittiesApp",
 		images: [
 			{
 				url: `${process.env.NODE_ENV === "production"
-						? process.env.NEXT_PUBLIC_SITE_URL
-						: "http://localhost:3000"
+					? process.env.NEXT_PUBLIC_SITE_URL
+					: "http://localhost:3000"
 					}/favicon/android-chrome-192x192.png`,
 				width: 192,
 				height: 192,

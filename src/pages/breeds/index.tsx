@@ -198,9 +198,8 @@ const Breeds: NextPage = () => {
 						{grid.map((item: any) => (
 							<Link
 								key={item.id}
-								href={`breeds/${
-									options.breed ? item?.breeds[0].id : item.id
-								}`}
+								href={`breeds/${options.breed ? item?.breeds[0].id : item.id
+									}`}
 								passHref
 							>
 								<GridItem
@@ -241,7 +240,7 @@ const Breeds: NextPage = () => {
 			)}
 
 			{!isLoading && (
-				<div className="mt-[20px] flex items-center justify-evenly">
+				<div className="mt-[20px] flex items-center justify-end space-x-4">
 					<Button
 						variant="primarySoft"
 						disabled={isLoading || options.page === 0}

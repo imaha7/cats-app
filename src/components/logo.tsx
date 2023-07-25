@@ -14,7 +14,7 @@ const Logo: FC<ComponentPropsWithoutRef<"a">> = ({ ...props }) => {
 		<Link href="/">
 			<a className={logoClasses} {...props}>
 				<Paw />
-				<h1 className="font-medium">PetsPaw</h1>
+				<h1 className="font-medium">KittiesApp</h1>
 			</a>
 		</Link>
 	);

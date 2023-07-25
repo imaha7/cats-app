@@ -12,6 +12,7 @@ import Loader from "../../components/ui/loader/loader";
 import UserLogItem from "../../components/userLog/userLogItem";
 
 const Breed: NextPage<{ breed: string }> = ({ breed }) => {
+	const [isExpand, setIsExpand] = React.useState<boolean>(false);
 	const { data, isLoading, isFetching } = useQuery<
 		getImageResponse[],
 		any,
@@ -74,7 +75,7 @@ const Breed: NextPage<{ breed: string }> = ({ breed }) => {
 						<div className="text-center text-[20px] text-gray-dark">
 							{data[0].breeds![0].description}
 						</div>
-						<div className="w-full flex justify-between gap-[20px] mt-[20px] sm:flex-wrap sm:gap-[10px]">
+						<div data-te-collapse-item className={`"w-full ${isExpand ? "flex" : "hidden"} justify-between gap-[20px] mt-[20px] sm:flex-wrap sm:gap-[10px]"`}>
 							<div className="w-full">
 								<span className="font-medium">
 									Temperament:
@@ -105,6 +106,14 @@ const Breed: NextPage<{ breed: string }> = ({ breed }) => {
 									</span>
 								</div>
 							</div>
+						</div>
+						<div className="text-right mt-10">
+							<a
+								className={`"inline-block rounded-lg bg-primary px-6 py-2 text-xs text-center font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"`}
+								role="button"
+								onClick={() => setIsExpand(!isExpand)}>
+								{isExpand ? 'Show Less' : "Show More"}
+							</a>
 						</div>
 					</div>
 				</>

@@ -228,7 +228,7 @@ const Gallery: NextPage = () => {
 				)}
 
 				{!isLoading && (
-					<div className="mt-[20px] flex items-center justify-evenly">
+					<div className="mt-[20px] flex items-center justify-end space-x-4">
 						<Button
 							variant="primarySoft"
 							disabled={isLoading || options.page === 0}
@@ -246,10 +246,10 @@ const Gallery: NextPage = () => {
 							disabled={
 								isLoading ||
 								options.page ===
-									Math.floor(
-										imageHeaders.data!["pagination-count"] /
-											options.limit
-									)
+								Math.floor(
+									imageHeaders.data!["pagination-count"] /
+									options.limit
+								)
 							}
 							onClick={() =>
 								setOptions({
